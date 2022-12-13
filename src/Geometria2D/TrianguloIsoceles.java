@@ -2,20 +2,22 @@ package Geometria2D;
 import java.math.*;
 import java.util.Scanner;
 
-public class Triangulo2 {
+public class TrianguloIsoceles {
     Scanner sc = new Scanner(System.in);
+
     private double num1;
     private  double num2;
     private double num3;
     private double resultado;
 
-    public Triangulo2(double num1, double num2, double num3, double resultado) {
+    public TrianguloIsoceles(Scanner sc, double num1, double num2, double num3, double resultado) {
+        this.sc = sc;
         this.num1 = num1;
         this.num2 = num2;
         this.num3 = num3;
         this.resultado = resultado;
     }
-    public void areatriangulo(){
+    public void areatrianguloIsoceles(){
         do {
             System.out.print("\nIngrese la base del triangulo: ");
             num1 = sc.nextDouble();
@@ -24,7 +26,7 @@ public class Triangulo2 {
             }
         }while (num1 < 0);
         do {
-            System.out.print("Ingrese la atlura del triangulo: ");
+            System.out.print("Ingrese la altura del triangulo: ");
             num2 = sc.nextDouble();
             if(num2 < 0){
                 System.out.println("\nEl dato ingresado es incorrecto ingese nuevamente por favor");
@@ -33,48 +35,40 @@ public class Triangulo2 {
         resultado = (num1 * num2) / 2;
         System.out.println("\nEl area del triangulo es: " + resultado);
     }
-    public void perimetrotriangulo(){
+    public void perimetrotrianguloIsoceles(){
         do {
-            System.out.print("\nIngrese el valor del primer lado: ");
+            System.out.print("\nIngrese el valor de uno de sus lados lado: ");
             num1 = sc.nextDouble();
             if(num1 < 0){
                 System.out.println("\nEl dato ingresado es incorrecto ingese nuevamente por favor");
             }
         }while(num1 < 0);
         do {
-            System.out.print("Ingrese el valor del segundo lado: ");
+            System.out.print("Ingrese el valor de la base: ");
             num2 = sc.nextDouble();
             if(num2 < 0){
                 System.out.println("\nEl dato ingresado es incorrecto ingese nuevamente por favor");
             }
         }while(num2 < 0);
-        do {
-            System.out.print("Ingrese el valor del tercer lado: ");
-            num3 = sc.nextDouble();
-            if(num3 < 0){
-                System.out.println("\nEl dato ingresado es incorrecto ingese nuevamente por favor");
-            }
-        }while(num3 < 0);
-        resultado = num1 + num2 + num3;
+        resultado = Math.pow(num1,2) + num2;
         System.out.println("\nEl perimetro del triangulo es: " + resultado);
     }
-    public void hipotenusa(){
-        do{
-            System.out.print("\nIngrese el valor del primer lado: ");
+    public void alturatrianguloIsoceles(){
+        do {
+            System.out.print("\nIngrese el valor de uno de sus lados lado: ");
             num1 = sc.nextDouble();
-            if (num1 < 0 ){
-                System.out.println("\nEl valor ingresado es incorrecto vuelva a ingresar por favor");
+            if(num1 < 0){
+                System.out.println("\nEl dato ingresado es incorrecto ingese nuevamente por favor");
             }
-        }while (num1 < 0);
-        do{
-            System.out.print("Ingrese el valor del segundo lado: ");
+        }while(num1 < 0);
+        do {
+            System.out.print("Ingrese el valor de la base: ");
             num2 = sc.nextDouble();
-            if (num2 < 0 ){
-                System.out.println("\nEl valor ingresado es incorrecto vuelva a ingresar por favor");
+            if(num2 < 0){
+                System.out.println("\nEl dato ingresado es incorrecto ingese nuevamente por favor");
             }
-        }while (num2 < 0);
-        num3 = (num1 * num1) + (num2 * num2);
-        resultado = Math.sqrt(resultado);
-        System.out.println("\nEl valor de la hipotenusa es: " + resultado);
+        }while(num2 < 0);
+        resultado = Math.sqrt(Math.pow(num1,2)-Math.pow(num2,2)/4);
+        System.out.println("\nLa altulra del triangulo es: " + resultado);
     }
 }
