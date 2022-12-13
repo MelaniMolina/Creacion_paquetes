@@ -5,36 +5,34 @@ import java.util.Scanner;
 public class Rectangulo {
     Scanner sc = new Scanner(System.in);
 
-    private double num1;
-    private double num2;
-    private double resultado;
+     double num1;
+     double num2;
+    double resultado;
 
-    private double num3;
+     double num3;
 
-    public Rectangulo(double num1, double num2, double resultado, double num3) {
+    public Rectangulo( double num1, double num2, double resultado, double num3) {
+        this.sc = sc;
         this.num1 = num1;
         this.num2 = num2;
-        this.resultado = resultado;
+        this.resultado = num1 * num2;
         this.num3 = num3;
     }
-    public void arearectangulo(){
-        do {
-            System.out.print("\nIngrese la base del rectangulo: ");
-            num1 = sc.nextDouble();
-            if(num1 < 0){
-                System.out.println("\nEl dato ingresado es incorrecto ingese nuevamente por favor");
-            }
-        }while (num1 < 0);
-        do {
-            System.out.print("Ingrese la altura del rectangulo: ");
-            num2 = sc.nextDouble();
-            if(num2 < 0){
-                System.out.println("\nEl dato ingresado es incorrecto ingese nuevamente por favor");
-            }
-        }while(num2 < 0);
-        resultado = num1 * num2;
-        System.out.println("\nEl area del rectangulo es: " + resultado);
+
+    public double arearectangulo(){
+        resultado= num1 * num2;
+        setResultado(resultado);
+        return resultado;
     }
+
+    public double getResultado() {
+        return resultado;
+    }
+
+    public void setResultado(double resultado) {
+        this.resultado = resultado;
+    }
+
     public void perimetrorectangulo(){
         do {
             System.out.print("Ingrese la base del rectangulo: ");
