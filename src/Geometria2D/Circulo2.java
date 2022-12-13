@@ -6,8 +6,8 @@ import static java.lang.Math.pow;
 
 public class Circulo2 {
     Scanner sc = new Scanner(System.in);
-    private double radio;
-    private double resultCir;
+     double radio;
+     double resultCir;
     public Circulo2(double radio, double resultCir) {
         this.radio = radio;
         this.resultCir = resultCir;
